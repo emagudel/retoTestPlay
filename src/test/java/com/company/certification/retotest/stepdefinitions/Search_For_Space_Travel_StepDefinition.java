@@ -1,10 +1,11 @@
-package com.company.certification.hexacta.stepdefinitions;
+package com.company.certification.retotest.stepdefinitions;
 
-import com.company.certification.hexacta.exceptions.ExpectedResultErr;
-import com.company.certification.hexacta.questions.VerifyExpectedResult;
-import com.company.certification.hexacta.questions.VerifyExpectedResultAlternate;
-import com.company.certification.hexacta.tasks.ClearFiles;
-import com.company.certification.hexacta.tasks.Search;
+import com.company.certification.retotest.exceptions.ExpectedResultErr;
+import com.company.certification.retotest.questions.VerifyExpectedResult;
+import com.company.certification.retotest.questions.VerifyExpectedResultAlternate;
+import com.company.certification.retotest.tasks.ClearFiles;
+import com.company.certification.retotest.tasks.CustomizeYourTrip;
+import com.company.certification.retotest.tasks.DestinationNext;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -16,14 +17,14 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 import java.util.List;
 import java.util.Map;
 
-import static com.company.certification.hexacta.exceptions.ExpectedResultErr.EXPECTED_RESULT;
-import static com.company.certification.hexacta.tasks.LoadData.loadDataTestWithTheFollowing;
-import static com.company.certification.hexacta.tasks.OpenBrowser.thePageSite;
+import static com.company.certification.retotest.exceptions.ExpectedResultErr.EXPECTED_RESULT;
+import static com.company.certification.retotest.tasks.LoadData.loadDataTestWithTheFollowing;
+import static com.company.certification.retotest.tasks.OpenBrowser.thePageSite;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class Search_the_Blog_for_an_article_StepDefinition {
+public class Search_For_Space_Travel_StepDefinition {
 
     @Before(order = 1)
     public void configuracionInicial() {
@@ -42,10 +43,11 @@ public class Search_the_Blog_for_an_article_StepDefinition {
     }
 
 
-    @When("^(.*) search in the application for a value with this information$")
+    @When("^(.*) search in the application for a value with this information of traveler$")
     public void i_search_in_the_application_for_a_value_with_this_information(String actorName, List<Map<String, Object>> information) {
         theActorCalled(actorName).wasAbleTo(loadDataTestWithTheFollowing(information));
-        theActorInTheSpotlight().attemptsTo(Search.inTheAplication());
+        theActorInTheSpotlight().attemptsTo(CustomizeYourTrip.inTheAplication());
+        theActorInTheSpotlight().attemptsTo(DestinationNext.inTheAplication());
     }
 
 

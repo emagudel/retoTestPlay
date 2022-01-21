@@ -1,4 +1,4 @@
-        package com.company.certification.hexacta.runners;
+        package com.company.certification.retotest.runners;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features={
                 "src/test/resources/features"
         },
-        glue = { "com.company.certification.hexacta.stepdefinitions" },
+        glue = { "com.company.certification.retotest.stepdefinitions" },
         snippets = SnippetType.CAMELCASE)
 
 public class GeneralTestRunner {}
