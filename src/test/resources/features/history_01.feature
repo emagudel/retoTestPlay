@@ -21,4 +21,4 @@ Feature: Search the testim.io page the information required about your dream jou
 
     Examples:
       | ID | departing       | returning       | adults | children | expectedResult |
-      | 2  | 26 January 2022 | 5 February 2022 | 2      | 4        | Tayabamba      |
+      | 2  | 26 January 2022 | 5 February 2022 | 2      | 4        | Saturno      |
